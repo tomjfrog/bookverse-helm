@@ -76,7 +76,6 @@ jobs:
       build_started_timestamp: ${{ steps.publish-build-info.outputs.build_started_timestamp }}
       build_number: ${{ steps.set-build-info.outputs.build_number }}
       app_version: ${{ steps.determine-semver.outputs.app_version }}
-      jf_oidc_token: ${{ steps.extract-token.outputs.oidc_token }}
 
     steps:
       - name: "[Setup] Checkout"
@@ -114,6 +113,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         id: jfrog-cli-auth
         with:
+          version: 2.88.0
           oidc-provider-name: bookverse-helm-github
           oidc-audience: ${{ vars.JFROG_URL }}
         env:
@@ -350,6 +350,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         id: jfrog-cli-auth
         with:
+          version: 2.88.0
           oidc-provider-name: bookverse-helm-github
           oidc-audience: ${{ vars.JFROG_URL }}
         env:

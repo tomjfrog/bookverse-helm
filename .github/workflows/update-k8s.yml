@@ -104,6 +104,8 @@ jobs:
       - name: Setup JFrog CLI (OIDC)
         if: env.SKIP != 'true'
         uses: jfrog/setup-jfrog-cli@v4
+        with:
+          version: 2.88.0
         id: jfrog-cli-auth
         env:
           JF_URL: ${{ vars.JFROG_URL }}
