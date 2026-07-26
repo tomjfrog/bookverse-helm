@@ -118,7 +118,6 @@ jobs:
           disable-job-summary: false
           disable-auto-build-publish: true
           disable-auto-evidence-collection: false
-          oidc-audience: ${{ vars.JFROG_URL }}
 
       - name: "[Setup] Extract OIDC Token from JFrog CLI"
         if: env.SKIP != 'true'
